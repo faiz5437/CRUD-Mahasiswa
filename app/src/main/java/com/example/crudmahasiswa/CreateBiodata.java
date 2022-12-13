@@ -45,6 +45,7 @@ public class CreateBiodata extends AppCompatActivity {
                     Toast.makeText(CreateBiodata.this, "Data Berhasil Disimpan", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(CreateBiodata.this, MainActivity.class);
                     startActivity(i);
+                    finish();
                 }
 
             }

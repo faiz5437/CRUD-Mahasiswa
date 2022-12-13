@@ -1,9 +1,12 @@
 package com.example.crudmahasiswa;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -59,10 +63,38 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolder>{
         });
 
         holder.btnHapus.setOnClickListener(view -> {
-            SQLHelper sqlHelper = new SQLHelper(ctx);
-            sqlHelper.deleteData(String.valueOf(dm.getId()));
-            Intent i = new Intent(ctx, MainActivity.class);
-            ctx.startActivity(i);
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(ctx);
+            alertDialog.setTitle(Html.fromHtml("<font color = '#FF0000'><strong>Yakin Ingin HAPUS SEMUA DATA ? </strong></font>"));
+            alertDialog.setMessage(Html.fromHtml("<font color = '#FF0000'>Klik Ya Untuk <strong>Hapus Semua Data</strong></font>"))
+                    .setIcon(R.drawable.ic_baseline_warning_amber_24)
+                    .setCancelable(true)
+                    .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            SQLHelper sqlHelper = new SQLHelper(ctx);
+                            sqlHelper.deleteData(String.valueOf(dm.getId()));
+                            Intent k = new Intent(ctx, MainActivity.class);
+                            ctx.startActivity(k);
+                            ((Activity)ctx).finish();
+
+                        }
+                    })
+                    .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    AlertDialog alert = alertDialog.create();
+                    alert.show();
+                    SQLHelper sqlHelper = new SQLHelper(ctx);
+                    this.notifyDataSetChanged();
+//                            SQLHelper sqlHelper = new SQLHelper(ctx);
+//                            sqlHelper.deleteData(String.valueOf(dm.getId()));
+//                            this.notifyDataSetChanged();
+//            Intent i = new Intent(ctx, MainActivity.class);
+//            ctx.startActivity(i);
+
         });
 
     }

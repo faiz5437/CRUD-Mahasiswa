@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:paddingBottom="12dp"
     android:paddingRight="20dp"
-    android:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="wrap_content">
 
@@ -14,16 +13,17 @@
     <androidx.cardview.widget.CardView
         android:layout_width="50dp"
         app:cardCornerRadius="12dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="9dp"
-        android:backgroundTint="#8CC0DE"
+        android:backgroundTint="#223D5C"
         android:layout_height="55dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center"
-            android:src="@drawable/person2"/>
+            android:src="@drawable/ic_baseline_account_circle_24"
+            app:tint="#FCEBA6" />
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -37,7 +37,7 @@
             android:id="@+id/tvNama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:textSize="18dp"
@@ -47,7 +47,7 @@
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -57,7 +57,7 @@
             android:id="@+id/tvNIM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="50dp"
             android:textStyle="bold"
             android:textSize="11dp"
             android:textColor="#757575"

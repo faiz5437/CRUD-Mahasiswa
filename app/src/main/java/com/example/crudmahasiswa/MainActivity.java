@@ -7,6 +7,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rvData);
         fabTambah = findViewById(R.id.fab_tambah);
         srlData = findViewById(R.id.swl_data);
-
         srlData.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -44,12 +44,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         });
 
-
-
-
-
-
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        retrieveData();
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -67,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerView.setAdapter(adapterData);
+        adapterData.notifyDataSetChanged();
+        recyclerView.invalidate();
     }
 
 
