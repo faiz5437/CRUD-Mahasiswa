@@ -79,6 +79,37 @@ public class SQLHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public Cursor readById(String id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE id = ?";
+        Cursor cursor = db.rawQuery(query, new String[] {id});
+//        String data0 = cursor.getString(0);
+//        String data1 = cursor.getString(1);
+//        String data2 = cursor.getString(2);
+//        String data3 = cursor.getString(3);
+//        String data4 = cursor.getString(4);
+//        String data5 = cursor.getString(5);
+
+        return cursor;
+
+//        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE id = 1", null);
+
+    }
+
+//    public ArrayList<DataModel> readById(String id){
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        String query = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE id = ?";
+//
+////        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+//        Cursor cursor = db.rawQuery(query, new String[] {id});
+//        ArrayList<DataModel> dataModelArrayList = new ArrayList<>();
+//        if (cursor.moveToFirst()){
+//            do {
+//                dataModelArrayList
+//            }
+//        }
+//    }
+
     // we have created a new method for reading all the courses.
     public ArrayList<DataModel> readData() {
         // on below line we are creating a

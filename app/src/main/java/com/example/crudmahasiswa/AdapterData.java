@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +18,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -46,6 +50,11 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolder>{
         holder.namaTv.setText(dm.getNama());
         holder.nimTv.setText(dm.getNim());
 
+        holder.mainCard.setOnClickListener(view -> {
+            Intent i = new Intent(ctx, ReadBiodata.class);
+            i.putExtra("id", dm.getId());
+            ctx.startActivity(i);
+        });
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +68,7 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolder>{
                 i.putExtra("alamat", dm.getAlamat());
 
                 ctx.startActivity(i);
+//                ((Activity)ctx).finish();
             }
         });
 
@@ -73,9 +83,9 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolder>{
                         public void onClick(DialogInterface dialogInterface, int i) {
                             SQLHelper sqlHelper = new SQLHelper(ctx);
                             sqlHelper.deleteData(String.valueOf(dm.getId()));
-                            Intent k = new Intent(ctx, MainActivity.class);
-                            ctx.startActivity(k);
-                            ((Activity)ctx).finish();
+//                            Intent k = new Intent(ctx, MainActivity.class);
+//                            ctx.startActivity(k);
+                            ((MainActivity)ctx).retrieveData();
 
                         }
                     })
@@ -108,13 +118,28 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ViewHolder>{
 
         private TextView idTv, nimTv, namaTv;
         private ImageView btnEdit, btnHapus;
+        private static final String TABLE_NAME = "biodata";
+        private CardView mainCard;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            mainCard = itemView.findViewById(R.id.mainCard);
             idTv = itemView.findViewById(R.id.tvId);
             nimTv = itemView.findViewById(R.id.tvNIM);
             namaTv = itemView.findViewById(R.id.tvNama);
             btnEdit = itemView.findViewById(R.id.btn_edit);
             btnHapus = itemView.findViewById(R.id.btn_delete);
+
+            itemView.setOnClickListener(view -> {
+                SQLHelper sqlHelper = new SQLHelper(ctx);
+                SQLiteDatabase db = sqlHelper.getReadableDatabase();
+                Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE id = 1", null);
+                cursor.moveToFirst();
+                String data = cursor.getString(2);
+                Log.d( "ViewHolder: cekdatabes ", data);
+            });
+
+
         }
 
     }

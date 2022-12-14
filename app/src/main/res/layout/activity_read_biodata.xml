@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    tools:context=".ReadBiodata">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="360dp"
+                        android:background="@drawable/top_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:clickable="false"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/circles" />
+
+                    <TextView
+                        android:id="@+id/tv_nama1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Nama Mahasiswa"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintStart_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+                    <TextView
+                        android:id="@+id/tv_nim1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="muhamadfaiz@gmail.com"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_nama1"
+                        app:layout_constraintStart_toStartOf="@+id/tv_nama1"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_nama1" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:src="@drawable/pp"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginEnd="24dp"
+                        android:background="@drawable/white_background"
+                        android:elevation="3dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_nim1">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginRight="40dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_marginLeft="40dp"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_identity"/>
+                                <TextView
+                                    android:id="@+id/textView7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"
+                                    android:layout_gravity="center_vertical"
+                                    android:textColor="#182693"
+                                    android:layout_marginLeft="12dp"
+                                    android:text="NIM" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_nim"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="9dp"
+                                android:layout_weight="1"
+                                android:textSize="16dp"
+                                android:layout_alignParentRight="true"
+                                android:textAlignment="textEnd"
+                                android:textColor="#5b5b5b"
+                                android:layout_marginLeft="80dp"
+                                android:text="NIM"/>
+
+
+                        </RelativeLayout>
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:background="#d9d9d9"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginStart="30dp"
+                            tools:layout_editor_absoluteX="24dp"
+                            tools:layout_editor_absoluteY="369dp" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_marginRight="40dp"
+                            android:layout_marginLeft="40dp"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_baseline_perm_identity_24"/>
+                                <TextView
+                                    android:id="@+id/textView5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"
+                                    android:layout_gravity="center_vertical"
+                                    android:textColor="#182693"
+                                    android:layout_marginLeft="12dp"
+                                    android:text="Nama" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_nama"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="9dp"
+                                android:layout_weight="1"
+                                android:textSize="16dp"
+                                android:layout_alignParentRight="true"
+                                android:textAlignment="textEnd"
+                                android:textColor="#5b5b5b"
+                                android:layout_marginLeft="80dp"
+                                android:text="Mahasisawa"/>
+                        </RelativeLayout>
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:background="#d9d9d9"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginStart="30dp"
+                            tools:layout_editor_absoluteX="24dp"
+                            tools:layout_editor_absoluteY="369dp" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="40dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_marginLeft="40dp"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_baseline_calendar_month_24"/>
+                                <TextView
+                                    android:id="@+id/textView11"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"
+                                    android:layout_gravity="center_vertical"
+                                    android:textColor="#182693"
+                                    android:layout_marginLeft="12dp"
+                                    android:text="Tanggal Lahir" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_tgl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="9dp"
+                                android:layout_weight="1"
+                                android:textSize="16dp"
+                                android:layout_alignParentRight="true"
+                                android:textAlignment="textEnd"
+                                android:textColor="#5b5b5b"
+                                android:layout_marginLeft="80dp"
+                                android:text="03 Oktober 1997"/>
+                        </RelativeLayout>
+                        <View
+                            android:id="@+id/view3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:background="#d9d9d9"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginStart="30dp"
+                            tools:layout_editor_absoluteX="24dp"
+                            tools:layout_editor_absoluteY="369dp" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_marginRight="40dp"
+                            android:layout_marginLeft="40dp"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_baseline_transgender_24"/>
+                                <TextView
+                                    android:id="@+id/tv2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"
+                                    android:layout_gravity="center_vertical"
+                                    android:textColor="#182693"
+                                    android:layout_marginLeft="12dp"
+                                    android:text="Jenis Kelamin" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_jk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="9dp"
+                                android:layout_weight="1"
+                                android:textSize="16dp"
+                                android:layout_alignParentRight="true"
+                                android:textAlignment="textEnd"
+                                android:textColor="#5b5b5b"
+                                android:layout_marginLeft="80dp"
+                                android:text="Laki - Laki"/>
+                        </RelativeLayout>
+                        <View
+                            android:id="@+id/view4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:background="#d9d9d9"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginStart="30dp"
+                            tools:layout_editor_absoluteX="24dp"
+                            tools:layout_editor_absoluteY="369dp" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="40dp"
+                            android:layout_marginLeft="40dp"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/ic_baseline_pin_drop_24"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="18sp"
+                                    android:layout_gravity="center_vertical"
+                                    android:textColor="#182693"
+                                    android:layout_marginLeft="12dp"
+                                    android:text="Alamat" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_alamat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="9dp"
+                                android:layout_weight="1"
+                                android:textSize="14dp"
+                                android:layout_marginStart="120dp"
+                                android:layout_alignParentRight="true"
+                                android:textAlignment="textEnd"
+                                android:textColor="#5b5b5b"
+                                android:lines="4"
+                                android:layout_marginLeft="80dp"
+                                android:text="Jl. Jendral sudirman Gg. SUkamanah"/>
+                        </RelativeLayout>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_back"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginEnd="40dp"
+                            app:cornerRadius="10dp"
+                            android:text="Kembali"
+                            android:backgroundTint="#1C54DF"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

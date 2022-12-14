@@ -44,13 +44,26 @@ public class UpdateBiodata extends AppCompatActivity {
         etAlamat.setText(alamatMhs);
 
         btnUpdate.setOnClickListener(view -> {
-            sqlHelper.updateData(String.valueOf(intId), etNIM.getText().toString(), etNama.getText().toString(),
-                    etTgl.getText().toString(), etJk.getText().toString(), etAlamat.getText().toString());
-            Toast.makeText(this, "Data Sudah Di Update", Toast.LENGTH_SHORT).show();
+            String valueNim = etNIM.getText().toString();
+            String valueNama = etNama.getText().toString();
+            String valueTgl = etTgl.getText().toString();
+            String valueJk = etJk.getText().toString();
+            String valueAlamat = etAlamat.getText().toString();
 
-            Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
+            if (valueNim.isEmpty() && valueNama.isEmpty() && valueTgl.isEmpty() && valueJk.isEmpty() && valueAlamat.isEmpty()) {
+                Toast.makeText(this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                return;
+            }else {
+                sqlHelper.updateData(String.valueOf(intId), etNIM.getText().toString(), etNama.getText().toString(),
+                        etTgl.getText().toString(), etJk.getText().toString(), etAlamat.getText().toString());
+                Toast.makeText(this, "Data Sudah Di Update", Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(this, MainActivity.class);
+                startActivity(i);
+                finish();
+            }
         });
+
 
 
 
