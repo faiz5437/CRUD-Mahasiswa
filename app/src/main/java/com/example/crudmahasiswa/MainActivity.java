@@ -68,23 +68,23 @@ public class MainActivity extends AppCompatActivity {
         sqlHelper = new SQLHelper(this);
 
         dataModelArrayList = sqlHelper.readData();
-        SQLiteDatabase db = sqlHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE id = 1", null);
-        cursor.moveToFirst();
-        String data0 = cursor.getString(0);
-        String data1 = cursor.getString(1);
-        String data2 = cursor.getString(2);
-        String data3 = cursor.getString(3);
-        String data4 = cursor.getString(4);
-        String data5 = cursor.getString(5);
-
-//        String data = cursor.getString(1);
-        Log.d(TAG, "retrieveData: currertye 0: "+ data0);
-        Log.d(TAG, "retrieveData: currertye 1: "+ data1);
-        Log.d(TAG, "retrieveData: currertye 2: "+ data2);
-        Log.d(TAG, "retrieveData: currertye 3: "+ data3);
-        Log.d(TAG, "retrieveData: currertye 4: "+ data4);
-        Log.d(TAG, "retrieveData: currertye 5: "+ data5);
+//        SQLiteDatabase db = sqlHelper.getReadableDatabase();
+//        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE id = 1", null);
+//        cursor.moveToFirst();
+//        String data0 = cursor.getString(0);
+//        String data1 = cursor.getString(1);
+//        String data2 = cursor.getString(2);
+//        String data3 = cursor.getString(3);
+//        String data4 = cursor.getString(4);
+//        String data5 = cursor.getString(5);
+//
+////        String data = cursor.getString(1);
+//        Log.d(TAG, "retrieveData: currertye 0: "+ data0);
+//        Log.d(TAG, "retrieveData: currertye 1: "+ data1);
+//        Log.d(TAG, "retrieveData: currertye 2: "+ data2);
+//        Log.d(TAG, "retrieveData: currertye 3: "+ data3);
+//        Log.d(TAG, "retrieveData: currertye 4: "+ data4);
+//        Log.d(TAG, "retrieveData: currertye 5: "+ data5);
 //        Log.d(TAG, "retrieveData: ReadData : "+ dataModelArrayList.toString());
 
 

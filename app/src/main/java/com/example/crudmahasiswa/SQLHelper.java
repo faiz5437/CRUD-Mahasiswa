@@ -81,7 +81,7 @@ public class SQLHelper extends SQLiteOpenHelper {
 
     public Cursor readById(String id){
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE id = ?";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE id = ?";
         Cursor cursor = db.rawQuery(query, new String[] {id});
 //        String data0 = cursor.getString(0);
 //        String data1 = cursor.getString(1);
@@ -122,6 +122,7 @@ public class SQLHelper extends SQLiteOpenHelper {
 
         // on below line we are creating a new array list.
         ArrayList<DataModel> dataModelArrayList = new ArrayList<>();
+        Log.d(TAG, "readData: curkor" + cursorData);
 
         // moving our cursor to first position.
         if (cursorData.moveToFirst()) {
